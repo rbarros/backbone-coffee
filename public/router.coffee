@@ -17,7 +17,10 @@ define [
     if id then p.render id else p.render()
     
   showDefault: () ->
-   console.info this
+   console.info 'default'
+   defaultPage = 'help'
+   @navigate('//page/#{defaultPage}',true);
+
   _extractParameters: (route, fragment) ->
    params = route.exec fragment
    params.shift()
